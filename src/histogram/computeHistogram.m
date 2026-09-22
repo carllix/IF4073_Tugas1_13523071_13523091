@@ -5,7 +5,10 @@ function counts = computeHistogram(imgChannel)
     end
 
     counts = zeros(1, 256);
+    pixels = double(imgChannel(:));
 
-    % TODO: implement
+    for level = 0:255
+        counts(level + 1) = sum(pixels == level);
+    end
 
 end

@@ -4,8 +4,8 @@ function cdf = computeCDF(counts)
         counts (1,256) {mustBeNumeric}
     end
 
-    cdf = zeros(1, 256);
-
-    % TODO: implement
+    total = sum(counts);
+    cumulative = cumsum(counts);
+    cdf = cumulative / total;
 
 end

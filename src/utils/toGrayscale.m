@@ -9,8 +9,10 @@ function grayImg = toGrayscale(rgbImg)
         return;
     end
 
-    grayImg = zeros(size(rgbImg, 1), size(rgbImg, 2), 'uint8');
+    R = double(rgbImg(:,:,1));
+    G = double(rgbImg(:,:,2));
+    B = double(rgbImg(:,:,3));
 
-    % TODO: implement
+    grayImg = uint8(0.299*R + 0.587*G + 0.114*B);
 
 end
