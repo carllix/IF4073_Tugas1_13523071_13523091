@@ -4,8 +4,11 @@ function outImg = histogramEqualization(imgChannel)
         imgChannel (:,:) {mustBeNumeric}
     end
 
-    outImg = imgChannel;
+    counts = computeHistogram(imgChannel);
+    cdf = computeCDF(counts);
+    lookupTable = round(255 * cdf);
 
-    % TODO: implement
+    idx = double(imgChannel) + 1;
+    outImg = uint8(lookupTable(idx));
 
 end

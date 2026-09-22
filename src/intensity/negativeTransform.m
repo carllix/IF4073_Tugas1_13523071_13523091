@@ -4,8 +4,6 @@ function outImg = negativeTransform(imgChannel)
         imgChannel (:,:) {mustBeNumeric}
     end
 
-    outImg = imgChannel;
-
-    % TODO: implement
+    outImg = uint8(255 - double(imgChannel));
 
 end
