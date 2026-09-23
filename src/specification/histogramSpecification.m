@@ -5,8 +5,14 @@ function outImg = histogramSpecification(imgChannel, refChannel)
         refChannel (:,:) {mustBeNumeric}
     end
 
-    outImg = imgChannel;
+    cdfSrc = computeCDF(computeHistogram(imgChannel));
+    cdfRef = computeCDF(computeHistogram(refChannel));
 
-    % TODO: implement
+    distance = abs(cdfSrc(:) - cdfRef(:)');
+    [~, nearestIdx] = min(distance, [], 2);
+    lookupTable = nearestIdx' - 1;
+
+    idx = double(imgChannel) + 1;
+    outImg = uint8(lookupTable(idx));
 
 end
