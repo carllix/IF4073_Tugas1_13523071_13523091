@@ -5,7 +5,7 @@
         <img src="https://img.shields.io/badge/MATLAB-R2026a-orange" alt="MATLAB R2026a"/>
         <img src="https://img.shields.io/badge/App%20Designer-GUI-blue" alt="App Designer"/>
     </p>
-    <img src="assets/app-logo.png" width="250" alt="ParaPix logo"/>
+    <img src="assets/app-pages.png" width="1000" alt="ParaPix logo"/>
 </div>
 
 ---
